@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "706743692238",
+    "project_id": "patterns-aab27",
+    "storage_bucket": "patterns-aab27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706743692238:android:0208690ec3d966e913999f",
+        "android_client_info": {
+          "package_name": "com.example.patterns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706743692238-lmktkhb26anj92221dr5vckeumu1ods8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJXZVZlQaumRUtPt4j44cIHGNEBsxL9eA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "706743692238-lmktkhb26anj92221dr5vckeumu1ods8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

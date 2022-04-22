@@ -10,6 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Patterns">
         <activity
+            android:name=".SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CustNavActivity"
+            android:exported="true"
+            android:label="@string/title_activity_cust_nav"
+            android:theme="@style/Theme.Patterns.NoActionBar" />
+        <activity
+            android:name=".NavActivity"
+            android:exported="true"
+            android:label="@string/title_activity_nav"
+            android:theme="@style/Theme.Patterns.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -23,6 +23,10 @@
             android:label="@string/title_activity_nav"
             android:theme="@style/Theme.Patterns.NoActionBar" />
         <activity
+            android:name=".AddItemActivity"
+            android:exported="true"
+            android:label="Add Items" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

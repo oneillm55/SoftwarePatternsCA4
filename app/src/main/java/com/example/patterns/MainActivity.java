@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
                             if(task.isSuccessful()){
                                 // checkVerification();
-                                if(true==false){//add check here if user is an admin user
+                                if(bemail.equalsIgnoreCase("admin@gmail.com")){
 
                                     startActivity(new Intent(MainActivity.this, NavActivity.class));
                                 }else{

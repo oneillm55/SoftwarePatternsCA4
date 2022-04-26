@@ -34,7 +34,7 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textAlignment="center"
-        android:textColorHint="#black"
+        android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

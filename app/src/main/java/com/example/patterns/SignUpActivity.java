@@ -84,13 +84,14 @@ public class SignUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if(task.isSuccessful()){
-                                Toast.makeText(getApplicationContext(), "Registration Complete", Toast.LENGTH_SHORT).show();
 
                                 //realtime
                                 User user = new User(busername,bemail,bpassword);
+                                userID = firebaseAuth.getUid();
 
                                 mDatabase.child("users").child(userID).setValue(user);
 
+                                Toast.makeText(getApplicationContext(), "Registration Complete", Toast.LENGTH_SHORT).show();
 
                                 startActivity(new Intent(SignUpActivity.this,MainActivity.class));
 

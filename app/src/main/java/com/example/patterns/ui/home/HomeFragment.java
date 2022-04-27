@@ -1,5 +1,6 @@
 package com.example.patterns.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.patterns.Item;
 import com.example.patterns.R;
 import com.example.patterns.RecyclerAdapter;
+import com.example.patterns.UpdateItemActivity;
+import com.example.patterns.databinding.FragmentUpdateItemBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +34,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<Item> itemsList = new ArrayList<>();
     private RecyclerAdapter recyclerAdapter;
+    private RecyclerAdapter.recyclerOnClickListener listener;
 
 
     @Override
@@ -40,7 +44,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView = view.findViewById(R.id.admin_recycler_view);
-        setUserInfo();
+        setItemInfo();
 
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -52,7 +56,7 @@ public class HomeFragment extends Fragment {
     }
 
 
-    private void setUserInfo() {
+    private void setItemInfo() {
         //set items from firebase to a list
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("items");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -65,10 +69,20 @@ public class HomeFragment extends Fragment {
                     Log.d("list", "Items:" + itemsList.size());
                 }
                 recyclerView.setHasFixedSize(true);
-                recyclerAdapter = new RecyclerAdapter(getContext(), itemsList);
+                setOnClickListener();
+                recyclerAdapter = new RecyclerAdapter(getContext(), itemsList, listener);
                 recyclerView.setAdapter(recyclerAdapter);
             }
-
+            private void setOnClickListener() {
+                listener = new RecyclerAdapter.recyclerOnClickListener() {
+                    @Override
+                    public void onClick(View v, int position) {
+                        Intent intent = new Intent(getContext(), UpdateItemActivity.class);
+                        intent.putExtra("item",itemsList.get(position).getId());
+                        startActivity(intent);
+                    }
+                };
+            }
 
 
             @Override
@@ -78,4 +92,6 @@ public class HomeFragment extends Fragment {
         });
 
     }
+
+
 }

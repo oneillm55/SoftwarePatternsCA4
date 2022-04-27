@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Patterns">
         <activity
+            android:name=".UpdateItemActivity"
+            android:exported="true" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="true" />
         <activity
@@ -26,6 +29,7 @@
             android:name=".AddItemActivity"
             android:exported="true"
             android:label="Add Items" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

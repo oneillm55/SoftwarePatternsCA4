@@ -23,7 +23,7 @@ public class usersRecyclerAdapter extends RecyclerView.Adapter<usersRecyclerAdap
 
         public MyViewHolder(final View view) {
             super(view);
-            userName = view.findViewById(R.id.item_name_display);
+            userName = view.findViewById(R.id.item_name_title);
         }
     }
     @NonNull

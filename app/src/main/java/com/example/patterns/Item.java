@@ -7,10 +7,10 @@ public class Item {
     String manufacturer;
     String category;
     double price;
-    Image image;
+    String image;
     int stockLevel;
 
-    public Item(String title, String manufacturer, String category, double price, Image image, int stockLevel) {
+    public Item(String title, String manufacturer, String category, double price, String image, int stockLevel) {
         this.title = title;
         this.manufacturer = manufacturer;
         this.category = category;
@@ -51,11 +51,11 @@ public class Item {
         this.price = price;
     }
 
-    public Image getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

@@ -115,7 +115,7 @@ public class AddItemActivity extends AppCompatActivity implements AdapterView.On
 
                                 uploadImage();
                                 final String itemID= UUID.randomUUID().toString();
-                                Item item = new Item(btitle,bmaufacturer,bcategory,bprice,imageKey,1);
+                                Item item = new Item(btitle,bmaufacturer,bcategory,bprice,imageKey,1,itemID);
                                 mDatabase.child("items").child(itemID).setValue(item);
 
                                 Toast.makeText(getApplicationContext(), "Item Added", Toast.LENGTH_SHORT).show();

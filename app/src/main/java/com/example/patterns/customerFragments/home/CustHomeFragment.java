@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.example.patterns.R;
 import com.example.patterns.User;
-import com.example.patterns.recyclerAdapter;
+import com.example.patterns.usersRecyclerAdapter;
 
 import java.util.ArrayList;
 
@@ -39,7 +39,7 @@ public class CustHomeFragment extends Fragment {
     }
 
     private void setAdapter() {
-        recyclerAdapter adapter =new recyclerAdapter(usersList);
+        usersRecyclerAdapter adapter =new usersRecyclerAdapter(usersList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

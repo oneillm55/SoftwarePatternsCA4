@@ -24,7 +24,7 @@ public class UpdateItemActivity extends AppCompatActivity {
     private EditText title,price,stock;
     private String id;
     private Item item;
-    private Button updateButton;
+    private Button updateButton,deleteButton;
     private ActivityUpdateItemBinding binding;
     private DatabaseReference mDatabase;
 
@@ -40,6 +40,7 @@ public class UpdateItemActivity extends AppCompatActivity {
         price=binding.editTextEditPrice;
         stock=binding.editTextEditStock;
         updateButton=binding.buttonUpdateItem;
+        deleteButton= binding.buttonDeleteItem;
 
     Bundle extras = getIntent().getExtras();
     if(extras != null){
@@ -85,6 +86,16 @@ public class UpdateItemActivity extends AppCompatActivity {
 
         }
     });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                mDatabase.child("items").child(id).removeValue();
+
+
+            }
+        });
 
     }
 }

@@ -78,7 +78,10 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onClick(View v, int position) {
                         Intent intent = new Intent(getContext(), UpdateItemActivity.class);
-                        intent.putExtra("item",itemsList.get(position).getId());
+                        intent.putExtra("id",itemsList.get(position).getId());
+                        intent.putExtra("title",itemsList.get(position).getTitle());
+                        intent.putExtra("price",String.valueOf(itemsList.get(position).getPrice()));
+                        intent.putExtra("stock",String.valueOf(itemsList.get(position).getStockLevel()));
                         startActivity(intent);
                     }
                 };

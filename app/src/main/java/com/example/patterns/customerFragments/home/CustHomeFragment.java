@@ -1,11 +1,13 @@
 package com.example.patterns.customerFragments.home;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -17,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.patterns.Item;
 import com.example.patterns.R;
 import com.example.patterns.RecyclerAdapter;
+import com.example.patterns.UpdateItemActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -67,8 +70,18 @@ public class CustHomeFragment extends Fragment {
                     Log.d("list", "Items:" + itemsList.size());
                 }
                 recyclerView.setHasFixedSize(true);
+                setOnClickListener();
                 recyclerAdapter = new RecyclerAdapter(getContext(), itemsList, listener);
                 recyclerView.setAdapter(recyclerAdapter);
+            }
+
+            private void setOnClickListener() {
+                listener = new RecyclerAdapter.recyclerOnClickListener() {
+                    @Override
+                    public void onClick(View v, int position) {
+                        Toast.makeText(getContext(), "Click", Toast.LENGTH_SHORT).show();
+                    }
+                };
             }
 
 

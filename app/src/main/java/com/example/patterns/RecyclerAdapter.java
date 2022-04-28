@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -25,6 +26,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     private Context context;
     private List<Item> itemList;
     private recyclerOnClickListener listener;
+    private FirebaseStorage storage;
+    private StorageReference storageReference;
 
 
     public RecyclerAdapter(Context context, List<Item> itemList, recyclerOnClickListener listener) {
@@ -72,6 +75,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder holder, int position) {
    // String name= itemList.get(position).getTitle();
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference().child("images").child(itemList.get(position).getImage());
     holder.itemName.setText(itemList.get(position).getTitle());
     holder.itemManufacturer.setText(itemList.get(position).getManufacturer());
     holder.itemCategory.setText(itemList.get(position).getCategory());
@@ -79,8 +84,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 //        FirebaseStorage storage = FirebaseStorage.getInstance();
 //        StorageReference storageReference = storage.getReference();
 //        StorageReference ref = storageReference.child("images/" +itemList.get(position).getImage());
-        Glide.with(this.context)
-                .load(itemList.get(position).getImage())
+       // Glide.with(this.context).load(itemList.get(position).getImage()).centerCrop().into(holder.itemImage);
+
+
+        GlideApp.with(context)
+                .load(storageReference)
+                .apply(new RequestOptions().override(200, 200))
                 .into(holder.itemImage);
 
 

@@ -19,6 +19,8 @@ public class UsersFragment extends Fragment {
     private UsersViewModel usersViewModel;
     private FragmentUsersBinding binding;
 
+    //in this fragment the admin would see a reycler view of all of the registered users in the database, when they click on a user they would be displayed with all the orders created by that user
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         usersViewModel =

@@ -17,4 +17,9 @@
         android:layout_height="wrap_content"
         android:textAlignment="textEnd"
         android:text="$" />
+    <Button
+        android:id="@+id/checkOutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Checkout"/>
 </LinearLayout>

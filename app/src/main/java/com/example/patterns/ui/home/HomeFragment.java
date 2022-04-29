@@ -42,10 +42,9 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        itemsList = new ArrayList<>();
         recyclerView = view.findViewById(R.id.admin_recycler_view);
         setItemInfo();
-
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);

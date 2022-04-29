@@ -9,7 +9,8 @@ class PayByPayPal implements PaymentStrategy {
     @Override
     public void collectPaymentDetails() {
 
-        //ask for username and password for pay pal
+        //ask for username and password for pay pal and address
+        //this would be done using edit texts eg email= findById(R.id.editTextEmailInput)
     }
 
     @Override

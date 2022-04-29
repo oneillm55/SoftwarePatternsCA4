@@ -1,11 +1,13 @@
 package com.example.patterns.payment;
 
 public class PayByCard implements PaymentStrategy {
+    String cardNumber, ccv, date;
 
 
     @Override
     public void collectPaymentDetails() {
-        //ask for card number, expiry date and ccv
+        //ask for card number, expiry date and ccv and address
+     //this would be done using edit texts eg cardNumber= findById(R.id.editTextCardNumberInput)
     }
 
     @Override

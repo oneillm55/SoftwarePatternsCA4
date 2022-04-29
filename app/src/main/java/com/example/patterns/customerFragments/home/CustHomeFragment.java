@@ -57,6 +57,7 @@ public class CustHomeFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         search=view.findViewById(R.id.editTextSearch) ;
         itemsList = new ArrayList<>();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         recyclerView = view.findViewById(R.id.cust_recycler_view);
         setItemInfo();
 
@@ -133,7 +134,8 @@ public class CustHomeFragment extends Fragment {
                                     public void onClick(DialogInterface dialog, int id) {
                                         //add to cart
 
-                                       // mDatabase.child("cart").child(firebaseAuth.getUid()).child("items").setValue(item);
+                                        mDatabase.child("cart").child(firebaseAuth.getUid()).child("items").setValue(item);
+                                        // mDatabase.child("cart").child("1").child("items").setValue(item);
                                     }
                                 })
 

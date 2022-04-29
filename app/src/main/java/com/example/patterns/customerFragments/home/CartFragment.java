@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.patterns.Item;
 import com.example.patterns.R;
@@ -34,6 +36,7 @@ public class CartFragment extends Fragment {
     private List<Item> itemsList = new ArrayList<>();
     private RecyclerAdapter recyclerAdapter;
     private RecyclerAdapter.recyclerOnClickListener listener;
+    private Button checkoutButton;
 
 
     @Override
@@ -44,15 +47,26 @@ public class CartFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.cart_recycler_view);
         setItemInfo();
-
+         checkoutButton=view.findViewById(R.id.checkOutButton);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), layoutManager.getOrientation()));
 
+
+        checkoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Launch Create Order", Toast.LENGTH_SHORT).show();
+                //here you would launch an activity that takes in user details and creates an order object which is stored in the database
+            }
+        });
+
         // Inflate the layout for this fragment
         return view;
     }
+
+
 
 
     private void setItemInfo() {

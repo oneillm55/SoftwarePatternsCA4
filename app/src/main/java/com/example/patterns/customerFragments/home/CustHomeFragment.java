@@ -90,7 +90,7 @@ public class CustHomeFragment extends Fragment {
     private void filter(String text) {
         ArrayList<Item> filteredList = new ArrayList<>();
         for (Item i: itemsList){
-            if(item.getTitle().toLowerCase().contains(text.toLowerCase())){
+            if(i.getTitle().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(i);
             };
         }

@@ -12,9 +12,5 @@
             android:id="@+id/cartFragment"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Cart" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Items" />
     </group>
 </menu>

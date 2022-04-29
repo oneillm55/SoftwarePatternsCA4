@@ -36,6 +36,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         this.listener= listener;
     }
 
+
+
     //    public RecyclerAdapter(ArrayList<Item> itemsList, Context context) {
 //        this.itemsList = itemsList;
 //        this.context = context;
@@ -99,6 +101,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public int getItemCount() {
 
         return itemList.size();
+    }
+    public void filterList(ArrayList<Item> filteredList) {
+        itemList = filteredList;
+        notifyDataSetChanged();
     }
 
     public interface recyclerOnClickListener{
